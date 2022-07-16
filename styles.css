@@ -1,0 +1,327 @@
+@import url(https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap);
+
+
+ /* -----Reset------ */
+ :root{
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+    --Gradient1: 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+    --Gradient2: 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+    --font: 'Josefin Sans', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a,
+button,
+label,
+input{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    display: block;
+}
+
+a{
+    display: inline;
+}
+
+a:hover{
+    text-decoration: overline;
+}
+
+body{
+    display: grid;
+    height: 100vh;
+    font-family: var(--font);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background: url(./images/bg-pattern-desktop.svg),
+                linear-gradient(135deg, hsl(0, 0%, 100%), 
+                hsl(0, 100%, 98%));
+    background-position: left;
+    background-size: 65% 100%;
+    color: var(--Desaturated-Red);
+    overflow: hidden;
+}
+
+
+/* CONTAINER ---------- */
+.container{
+    display: grid;
+    place-content: center;
+    grid-template-columns: 5rem 1fr 1fr;
+    width: 100%;
+}
+
+/* LOGO---------------- */
+.logo{
+    grid-row: 1/2;
+    grid-column: 2/3;
+    padding-block-start: 2.5rem;
+}
+
+/* HERO----------- */
+.hero{
+    grid-row: 1/4;
+    grid-column: 3/4;
+    justify-self: flex-end;
+}
+
+.desktop-hero{
+    height: 100vh;
+    max-width: 100%;
+}
+
+.mobile-hero{
+    display: none;
+}
+
+
+/* DESCRIPTION ------------ */
+.description{
+    grid-row: 2/3;
+    grid-column: 2/3;
+    padding-inline-end: 8rem;
+}
+
+.description h1{
+    text-transform: uppercase;
+    font-size: 3.7rem;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 15px;
+    color: var(--Dark-Grayish-Red);
+}
+
+.description h1 > span{
+    font-weight: 300;
+    color: var(--Desaturated-Red);
+}
+
+.description p{
+    padding: 2rem 0 2rem 0;
+
+}
+
+/* FORM----- */
+form{
+    width: 100%;
+    position: relative;
+}
+
+input{
+    width: 100%;
+    height: 3rem;
+    border-radius: 25px;
+    font-weight: 600;
+    border: 1.5px solid hsla(0, 6%, 24%, 0.233);
+    padding-inline-start: 2rem;
+}
+
+input:checked,
+input:focus{
+    outline: 1px solid hsla(0, 1%, 15%, 0.616);
+    border: 1px solid hsla(0, 3%, 14%, 0.568);
+    color: var(--Dark-Grayish-Red);
+}
+
+::-webkit-input-placeholder{
+    opacity: 0.5;
+}
+
+button .arrow-icon{
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    padding: 0.95rem 2.3rem;
+    border-radius: 25px;
+    position: absolute;
+    top: -0.05rem;
+    right: 0;
+}
+
+button:hover{
+    opacity: 0.8;
+    position: absolute;
+    top: -0.15rem;
+    right: -0.05rem;
+    transform: scale(1);
+}
+
+
+/* STYLING JAVASCRIPT ERROR: Linke to html label  */
+.error{
+    color: var(--Soft-Red);
+    font-size: 0.8rem;
+    width: 75%;
+    height: 3.8rem;
+    display: flex;
+    align-items: flex-end;
+    padding-inline-start: 1.5rem;
+    margin-top: -2.3rem;
+}
+
+.passError{
+    background: url(./images/icon-error.svg) no-repeat;
+    background-position: right top;
+}
+
+.red{
+    border: 1px solid var(--Soft-Red);
+    outline: 1px solid var(--Soft-Red);
+}
+
+.red:focus{
+    border: 1px solid var(--Soft-Red);
+    outline: 1px solid var(--Soft-Red);
+}
+
+
+/* FOOTER----------------- */
+footer{
+    grid-row: 3/4;
+    grid-column: 2/3;
+    align-self: flex-end;
+    margin-bottom: 1rem;
+}
+
+.attribution {
+    font-size: 11px; 
+}
+
+.attribution a { 
+    color: var(--Dark-Grayish-Red); 
+}
+
+
+/* -------MEDIA QUERY--------------------- */
+/* --------Tablet Screen----------- */
+@media (max-width: 850px) {    
+    body{
+        font-size: 0.9rem;
+    }
+    
+    /* CONTAINER ---------- */
+    .container{
+        grid-template-columns: 5% 55% 40%;
+    }
+    
+    /* DESCRIPTION ------------ */
+    .description{
+        padding-inline-end: 2rem;
+    }
+    
+    .description h1{
+        font-size: 3.2rem;
+        letter-spacing: 9px;
+    }
+    
+    /* FORM----- */
+    
+    input{
+        font-size: 0.8rem;
+        padding-inline-start: 1.3rem;
+    }
+    
+    button .arrow-icon{
+        padding: 0.95rem 2rem;
+    }
+    
+    /* STYLING JAVASCRIPT ERROR: Linke to html label  */
+    .error{
+        font-size: 0.7rem;
+    }
+}
+
+
+/* ---Mobile Screen -----  */
+@media (max-width: 630px) {
+    body{
+        height: unset;
+        background: linear-gradient(135deg, hsl(0, 0%, 100%), 
+                    hsl(0, 100%, 98%));
+        overflow: unset;
+    }
+     
+    /* CONTAINER ---------- */
+    .container{
+        display: grid;
+        place-content: center;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    
+    /* LOGO---------------- */
+    .logo{
+        grid-row: 1/2;
+        grid-column: 1/2;
+        padding: 2rem;
+    }
+    
+    /* HERO----------- */
+    .hero{
+        grid-row: 2/3;
+        grid-column: 1/2;
+        justify-self: center;
+        text-align: center;
+        width: 100%;
+        background: hsl(0, 34%, 59%);
+    }   
+    
+    .desktop-hero{
+        display: none;
+    }
+    
+    .mobile-hero{
+        display: unset;
+        height: 100%;
+        width: max-content;
+        max-width: 100%; 
+    }
+    
+    
+    /* DESCRIPTION ------------ */
+    .description{
+        grid-row: 3/4;
+        grid-column: 1/2;
+        padding: 4rem 4rem;
+        text-align: center;
+    }
+    
+    .description h1{
+        font-size: 3.3rem;
+        font-weight: 400;
+        line-height: 1.1;
+        letter-spacing: 15px;
+    }
+    
+    .description p{
+        padding: 2rem 0;
+    }
+    
+    /* FORM----- */
+    button .arrow-icon{
+        padding: 0.95rem 1.8rem;
+    }
+    
+    
+    /* STYLING JAVASCRIPT ERROR: Linke to html label  */
+    .error{
+        font-size: 0.8rem;
+        width: 80%;
+        padding-inline-start: 1.5rem;
+        margin-top: -2.3rem;
+    }
+    
+    /* FOOTER----------------- */
+    footer{
+        grid-row: 4/5;
+        grid-column: 1/2;
+        text-align: center;
+    }
+}
