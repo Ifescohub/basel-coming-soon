@@ -201,14 +201,14 @@ footer{
 
 /* -------MEDIA QUERY--------------------- */
 /* --------Tablet Screen----------- */
-@media (max-width: 850px) {    
+@media (max-width: 900px) {    
     body{
         font-size: 0.9rem;
     }
     
     /* CONTAINER ---------- */
     .container{
-        grid-template-columns: 5% 55% 40%;
+        grid-template-columns: 1.5rem 1fr 1fr;
     }
     
     /* DESCRIPTION ------------ */
@@ -270,7 +270,7 @@ footer{
         justify-self: center;
         text-align: center;
         width: 100%;
-        background: hsl(0, 34%, 59%);
+        background: hsl(0, 36%, 60%);
     }   
     
     .desktop-hero{
